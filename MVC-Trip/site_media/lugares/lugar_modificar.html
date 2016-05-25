@@ -1,0 +1,63 @@
+<form action="{MODIFICAR_LUGAR}" method="POST">
+	<fieldset>
+		<legend> Datos del lugar</legend>	
+		<input type="hidden" name="id" value="{id}"/>
+		<br>
+		<label for="nombre_lugar">Nombre del lugar</label>
+		<br>
+		<input type="text" name="nombre" id="nombre_lugar" placeholder="Torres del paine" maxlength="40" required="true"
+		data-describedby="lugar-description" data-description="lugar" data-conditional="confirmarLugar" value="{nombre}"/>
+		<br>
+		<label for="id_web">Página web</label>
+		<br>
+		<input type="text" name="web" id="id_web" placeholder="www.torresdelpaine.cl" maxlength="40" required="false"
+		data-describedby="web-description" data-description="web" data-conditional="confirmaWeb" value="{web}"/>
+		<br>
+		<label for="id_telefono">Teléfono</label>
+		<br>
+		<input type="text" name="telefono" id="id_telefono" placeholder="+12 123456789" required="true"
+		data-describedby="telefono-description" data-description="telefono" data-conditional="confirmaTelefono" 
+		value="{telefono}"/>
+		<br>
+		<label for="id_foto">Escoger imagen </label>
+		<br>
+		<input type="file" id="id_foto" name="photo" size="25"/>	
+		<br>
+		<hr>
+		<input type="submit" value="Modificar" onclick="return validar();">
+	</fieldset>
+	<hr>
+	<div id="mensaje"></div>
+</form>
+
+<script type="text/javascript">
+	function validar()
+	{
+		var formulario = document.getElementById("form");
+		var t_user = document.getElementById("nombre_usuario").value;
+		var t_nombre = document.getElementById("id_nombre_real").value;
+		var t_pass = document.getElementById("id_pass").value;
+		var t_passconf = document.getElementById("id_pass_confirm").value;
+
+		
+		if(t_user.length<=5)
+		{
+			document.getElementById("mensaje").innerHTML = "<span>El nombre de usuario es muy corto</span>";
+			return false;
+		}
+		else if(t_nombre.length<=5)
+		{
+			document.getElementById("mensaje").innerHTML = "<span>El nombre es muy corto</span>";
+			return false;
+		}
+		else if(t_pass!=t_passconf)
+		{
+			document.getElementById("mensaje").innerHTML = "<span>Las contraseñas no coinciden</span>";
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+</script>

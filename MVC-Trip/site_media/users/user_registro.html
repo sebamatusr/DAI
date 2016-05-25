@@ -1,0 +1,65 @@
+<form action="{REGISTRAR_USUARIO}" method="POST" id="form">
+	<fieldset>
+		<legend>Datos del usuario</legend>	
+		<label for="nombre_usuario">Nombre de usuario</label>
+		<br>
+		<input type="text" name="nombre" id="nombre_usuario" placeholder="Nombre de usuario" maxlength="16" required="true"
+		data-describedby="user-description" data-description="user" data-conditional="confirmarUser"/>
+		<br>
+		<label for="id_nombre_real">Nombre</label>
+		<br>
+		<input type="text" name="nombre_real" id="id_nombre_real" placeholder="Nombre" maxlength="25" required="true"
+		data-describedby="nombre-description" data-description="nombre" data-conditional="confirmaNombre"/>
+		<br>
+		<label for="id_pais_origen">País de origen</label>
+		<br>
+		<select name="pais_origen" id="id_pais_origen" class="input-medium bfh-countries" data-country="CL"></select>
+		<br>
+		<label for="id_pass">Password</label>
+		<br>
+		<input type="password" name="password" id="id_pass" placeholder="Password" required="true"
+		data-describedby="pass-description" data-description="pass" data-conditional="confirmaPass"/>
+		<br>
+		<label for="id_pass_confirm">Confirmar password</label>
+		<br>
+		<input type="password" name="password_confirm" id="id_pass_confirm" placeholder="Password" required="true"
+		data-describedby="confpass-description" data-description="confpass" data-conditional="confirmaConfPass"/>	
+		<br>
+		<hr>
+		<input type="submit" value="Registrar" onclick="return validar();">
+	</fieldset>
+
+		<hr>
+		<div id="mensaje"></div>
+</form>
+<script type="text/javascript">
+	function validar()
+	{
+		var formulario = document.getElementById("form");
+		var t_user = document.getElementById("nombre_usuario").value;
+		var t_nombre = document.getElementById("id_nombre_real").value;
+		var t_pass = document.getElementById("id_pass").value;
+		var t_passconf = document.getElementById("id_pass_confirm").value;
+
+		
+		if(t_user.length<=5)
+		{
+			document.getElementById("mensaje").innerHTML = "<span>El nombre de usuario es muy corto</span>";
+			return false;
+		}
+		else if(t_nombre.length<=5)
+		{
+			document.getElementById("mensaje").innerHTML = "<span>El nombre es muy corto</span>";
+			return false;
+		}
+		else if(t_pass!=t_passconf)
+		{
+			document.getElementById("mensaje").innerHTML = "<span>Las contraseñas no coinciden</span>";
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+</script>

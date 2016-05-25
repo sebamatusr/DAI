@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>TRIPTOURISM</title>
+		<meta charset="utf-8"/>
+		<link href="{PATH_CSS}" rel="stylesheet">
+		<link href="{PATH_FOOTER}" rel="stylesheet">
+		<link href="{PATH_BSFH}" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    	<script src="{PATH_JS}"></script>
+    	<script src="{PATH_JSFH}"></script>
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-pg-collapsed>
+		    <div class="container">
+		        <div class="navbar-header">
+		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		                <span class="sr-only">Toggle navigation</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+		            <a class="navbar-brand" href="#">TripTourism</a>
+		        </div>
+		        <div class="navbar-collapse collapse">
+		            <div class="navbar-form navbar-right" >		            	
+		                <li> <a href="{NUEVO_USUARIO}">Registrarte</a></li>
+		                <li> <a href="{USER_LOGIN}">Iniciar sesión</a></li>
+		            </div>
+		        </div>
+		        <!--/.navbar-collapse -->
+		    </div>
+		</div>
+		
+		<div class="container" >
+			<h2>TRIPTOURISM</h2>
+			
+			<!-- Fin módulo de autores -->
+
+			<h3>{subtitulo}</h3>
+			<div class="alert alert-success" role="alert">
+				{mensaje}
+			</div>
+			<div class="container">
+			  <h3>Tabs</h3>
+			  <ul class="nav nav-tabs">
+			    <li class="active"><a href="#">Home</a></li>
+			    <li><a href="{NUEVO_LUGAR}">Registrar nuevo lugar</a></li>
+			    <li><a href="{EDITAR_LUGAR}">Buscar un lugar</a></li>
+			    <li><a href="{LISTAR_LUGAR}">Listar lugares</a></li>
+			  </ul>
+			  <br>
+			  	<div id="formulario">
+				{formulario}
+				</div>
+			</div>
+			
+		</div>
+		<footer class="footer">
+	     	<div class="container">
+	        	<p class="text-muted">(c){autor}</p>
+	      	</div>
+	    </footer>
+</html>
